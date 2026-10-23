@@ -1,0 +1,48 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "withheld": "#90",
+      "netPayable": "#810",
+      "balance": "#310"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "paid": "810"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "paid": "811"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "balance": "#-1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "withholdingPct": "100",
+      "paid": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "deduction": "1001"
+    },
+    "expected": {},
+    "error": true
+  }
+]
